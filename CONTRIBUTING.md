@@ -4,14 +4,14 @@ Thanks for your interest in contributing! We welcome improvements across code, d
 
 ## Getting started
 - Fork and clone the repo
-- Install dependencies: `npm install`
-- Build the extension: `npm run build:extension`
+- Install dependencies: `pnpm install`
+- Build the extension: `pnpm run build:extension`
 - Load the unpacked extension from `dist-extension/` in Chrome
 
 ## Development commands
-- `npm run dev:extension` – Vite dev server for the extension
-- `npm run build:extension` – build the MV3 extension bundle
-- `npm run gen:icons` – generate placeholder icons (replace with real assets for release)
+- `pnpm run dev:extension` – Vite dev server for the extension
+- `pnpm run build:extension` – build the MV3 extension bundle
+- `pnpm run gen:icons` – generate placeholder icons (replace with real assets for release)
 
 ## Code guidelines
 - Use TypeScript and meaningful names; optimize for clarity and readability

@@ -44,8 +44,8 @@ export default function PopupView() {
   const [endpoint, setEndpoint] = useState("");
   const [token, setToken] = useState("");
   const [localMode, setLocalMode] = useState(false);
-  const [localHost, setLocalHost] = useState("");
-  const [localPort, setLocalPort] = useState("");
+  const [localHost, setLocalHost] = useState("127.0.0.1");
+  const [localPort, setLocalPort] = useState("8080");
   const [localScheme, setLocalScheme] = useState<"http" | "https">("http");
   const [logs, setLogs] = useState<LogEntry[]>([]);
   const [uptime, setUptime] = useState(0);
@@ -61,8 +61,8 @@ export default function PopupView() {
       setStatus((s?.state as ConnectionState) || "disconnected");
       setEndpoint((s?.endpoint as string) || "");
       setLocalMode(Boolean(s?.localMode));
-      setLocalHost((s?.localProxyHost as string) || "");
-      setLocalPort(s?.localProxyPort != null ? String(s.localProxyPort) : "");
+      setLocalHost((s?.localProxyHost as string) || "127.0.0.1");
+      setLocalPort(s?.localProxyPort != null ? String(s.localProxyPort) : "8080");
       setLocalScheme(s?.localProxyScheme === "https" ? "https" : "http");
 
       const logRes = await bg({ type: "get_logs" });

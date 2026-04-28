@@ -16,12 +16,12 @@ The extension configures a browser proxy via the `proxy` API and talks to your s
 ## Getting Started
 
 ### Prerequisites
-- Node.js 20.18+ and npm
+- Node.js 20.18+ and pnpm
 - Chrome/Chromium (MV3), optionally Firefox (MV3 support varies)
 
 ### Install dependencies
 ```bash
-npm install
+pnpm install
 ```
 
 ### Configure the API origin
@@ -31,7 +31,7 @@ Examples:
 - PowerShell (Windows):
 ```powershell
 $env:VITE_API_ORIGIN = 'https://api.example.com'
-npm run build:extension
+pnpm run build:extension
 ```
 
 - .env file (Vite automatically loads):
@@ -42,10 +42,10 @@ VITE_API_ORIGIN=https://api.example.com
 ### Build the extension
 ```bash
 # Optional: generate simple placeholder icons
-npm run gen:icons
+pnpm run gen:icons
 
 # Build the web extension
-npm run build:extension
+pnpm run build:extension
 ```
 
 The bundle will be produced in `dist-extension/`.
@@ -57,7 +57,7 @@ The bundle will be produced in `dist-extension/`.
 
 ### Run the Next.js app (optional)
 ```bash
-npm run dev
+pnpm run dev
 ```
 Open `http://localhost:9002`.
 
@@ -94,9 +94,9 @@ Body: { "client": "extension" }
 If your API differs, update `extension/background.ts` accordingly.
 
 ## Development
-- `npm run dev:extension` – start Vite in watch mode for the extension
-- `npm run build:extension` – build the MV3 extension
-- `npm run gen:icons` – generate simple placeholder icons
+- `pnpm run dev:extension` – start Vite in watch mode for the extension
+- `pnpm run build:extension` – build the MV3 extension
+- `pnpm run gen:icons` – generate simple placeholder icons
 
 ## Browser Permissions
 The MV3 manifest requests:
