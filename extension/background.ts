@@ -74,8 +74,9 @@ async function connectProxy(): Promise<void> {
       return;
     }
 
-    // Remote API-driven mode
-    const resp = await fetch(`${endpoint.replace(/\/$/, '')}/connect`, {
+    // Remote API-driven mode. `endpoint` is optional on StoredState but always
+    // present at runtime: readState() seeds it with DEFAULT_ENDPOINT above.
+    const resp = await fetch(`${(endpoint ?? DEFAULT_ENDPOINT).replace(/\/$/, '')}/connect`, {
       method: "POST",
       headers: {
         "Content-Type": "application/json",
@@ -179,5 +180,3 @@ chrome.runtime.onMessage.addListener((request, _sender, sendResponse) => {
   handle().then((res) => sendResponse(res));
   return true; // keep channel open for async response
 });
-
-
